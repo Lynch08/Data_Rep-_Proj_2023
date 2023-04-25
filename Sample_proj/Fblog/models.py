@@ -1,8 +1,16 @@
 
 from datetime import datetime
-from Fblog import db
+from Fblog import db, login_manager
+#fask extension gives class to inherite from that adds these attributes and methods (is authenticated, is active, is annonomous, get_id)
+from flask_login import UserMixin
 
-class User(db.Model):
+#decorator
+@login_manager.user_loader 
+#function to fimd userby id
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(20), unique = True, nullable = False)
     email = db.Column(db.String(120), unique = True, nullable = False)
