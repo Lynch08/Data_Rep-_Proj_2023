@@ -1,6 +1,9 @@
+import os
+import secrets
+from PIL import Image
 from flask import render_template, url_for, flash, redirect, request
 from Fblog import app, db, bcrypt
-from Fblog.forms import RegistrationForm, LoginForm
+from Fblog.forms import RegistrationForm, LoginForm, UpdateAccountForm
 from Fblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -70,8 +73,45 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
+#Save Profile Pic
+def save_pic(form_picture):
+    random_hex = secrets.token_hex(8) #base of filename
+    _, f_ext = os.path.splitext(form_picture.filename) # finds the filename and extension uploaded (separetly)so it is saved as same
+    picture_fn = random_hex + f_ext
+    picture_pa = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
+    
+    output_pic_size = (125, 125) # resizing imgage before saving if pic uploaded is big - for efficency
+    i = Image.open(form_picture)
+    i.thumbnail = (output_pic_size)
+    i.save(picture_pa)       #THIS CODE IS NOT WORKING FOR ME!!!!!!!!!!!!!!!!!!!!!!!
+
+    return picture_fn
+
+
+
 #Accounts route
-@app.route("/account")
+@app.route("/account", methods = ['GET', 'POST'])
 @login_required
 def account():
-     return render_template('account.html', title='Account')
+     form = UpdateAccountForm()
+     if form.validate_on_submit():
+         if form.picture.data:
+             picture_file = save_pic(form.picture.data)
+             current_user.image_file = picture_file
+             if form.picture.data:
+                old_pic = current_user.image_file
+                picture_file = save_pic(form.picture.data)
+                current_user.image_file = picture_file
+                if old_pic != 'default.jpg':
+                    os.remove(os.path.join(app.root_path, 'static/profile_pics', old_pic)) # deletes old picture to save space
+         current_user.username = form.username.data #Updates current users username
+         current_user.email = form.email.data       #Updates current users email
+         db.session.commit()
+         flash ('Your Account has been Updated!!', 'success') 
+         return redirect(url_for('account'))
+     elif request.method == 'GET':                 # populates form with the curret username and password (befor update)
+         form.username.data = current_user.username
+         form.email.data = current_user.email
+     image_file = url_for('static', filename = 'profile_pics/' + current_user.image_file)
+     return render_template('account.html', title='Account', image_file=image_file, form=form)
