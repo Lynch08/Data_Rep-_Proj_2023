@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class = "content-section">
+    <form method = "POST" action=""> <!--This will post the information back to the same route we are curently on --> 
+        {{ form.hidden_tag() }} <!--hidden_tag is a CSRF(Cross Site Fogary Token) --> 
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-3">{{ legend }}</legend>
+            <!--field names are specified from the Rgistration Class in forms.py--> 
+            <div class="form-group">
+                {{ form.title.label(class="form-control-label") }} <!--prints out title from title field --> 
+                {% if form.title.errors%} 
+                {{ form.title(class="form-control form-control-lg is-invalid") }} <!--for errors in username --> 
+                <div class = "invalid-feedback">
+                    {% for error in form.title.errors %} 
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.title(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.content.label(class="form-control-label") }} <!--prints out content from content field --> 
+                {% if form.content.errors%} 
+                {{ form.content(class="form-control form-control-lg is-invalid") }} <!--for errors in username --> 
+                <div class = "invalid-feedback">
+                    {% for error in form.content.errors %} 
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                    {{ form.content(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <!--Submit button using bootstrap--> 
+        <div class="form-group">
+            {{ form.submit(class = "btn btn-outline-info")}}
+        </div>
+    </form>
+</div>
+{% endblock content %}
