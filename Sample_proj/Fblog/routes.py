@@ -29,7 +29,8 @@ from flask_login import login_user, current_user, logout_user, login_required
 @app.route("/") 
 @app.route("/home") 
 def home():
-    posts = Post.query.all()
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page = page, per_page=3) #allows me to define how many posts per page - orders them from newest to oldest
     return render_template('home.html', posts = posts) # posts variable within the template is equal to the dummy data
 
 #About page
@@ -43,12 +44,12 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
-    if form.validate_on_submit(): #send flash message
+    if form.validate_on_submit(): #
         hashed_pw = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user = User(username = form.username.data, email = form.email.data, password = hashed_pw)
         db.session.add(user)
         db.session.commit()
-        flash('Account Created! Login Now!!','success') # success is a bootstrap class
+        flash('Account Created! Login Now!!','success') # send flash message ('success' is a bootstrap class)
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form = form)
 
@@ -166,3 +167,13 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your Post has been Deleted', 'success')
     return redirect(url_for('home'))
+
+#Show all posts for a specific username
+@app.route("/user/<string:username>") 
+def user_posts(username):
+    page = request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = Post.query.filter_by(author=user)\
+        .order_by(Post.date_posted.desc())\
+        .paginate(page = page, per_page=3) #allows me to define how many posts per page - orders them from newest to oldest
+    return render_template('user_posts.html', posts = posts, user=user) # posts variable within the template is equal to the dummy data

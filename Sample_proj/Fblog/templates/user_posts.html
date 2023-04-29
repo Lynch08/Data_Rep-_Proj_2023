@@ -2,6 +2,7 @@
 
 {% extends "layout.html" %}
 {% block content %}
+    <h1 class = "mb-3"> Posts by {{ user.username }} ({{ posts.total }})</h1>
 
 <!-- Post data from Fblog.py -->
     {% for post in posts.items %} <!-- This is a paginated object allows app to group X amount of posts per page (see lines 32,33 in routes.py) -->
@@ -20,9 +21,9 @@
     {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %} <!-- allows links to posts pages -->
       {% if page_num %}
         {% if   posts.page == page_num %}
-          <a class ="btn btn-info mb-3" href="{{ url_for('home', page = page_num)}}">{{page_num}}</a> <!-- higlights link to current page -->
+          <a class ="btn btn-info mb-3" href="{{ url_for('user_posts', username = user.username, page = page_num)}}">{{page_num}}</a> <!-- higlights link to current page -->
         {% else %}  
-          <a class ="btn btn-outline-info mb-3" href="{{ url_for('home', page = page_num)}}">{{page_num}}</a> <!-- links to not current page-->
+          <a class ="btn btn-outline-info mb-3" href="{{ url_for('user_posts', username = user.username, page = page_num)}}">{{page_num}}</a> <!-- links to not current page-->
         {% endif %}    
         {% else %}
         ...

@@ -9,7 +9,7 @@
       <img class= "rounded-circle article-img" src="{{url_for('static', filename = 'profile_pics/' + post.author.image_file) }}"> <!-- Adding profile pic to posts -->
         <div class="media-body">
           <div class="article-metadata">
-            <a class="mr-2" href="#">{{ post.author.username }}</a> <!-- Adding author name to posts -->
+            <a class="mr-2" href="{{ url_for('user_posts', username = post.author.username)}}">{{ post.author.username }}</a> <!-- Adding author name to posts -->
             <small class="text-muted">{{ post.date_posted.strftime('%d-%m-%Y %H:%M') }}</small> <!-- Adding date/time to posts -->
             {% if post.author == current_user %}
                 <div>
