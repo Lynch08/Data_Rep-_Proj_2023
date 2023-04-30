@@ -187,7 +187,7 @@ def send_reset_email(user):
 
 If you did not make this request please ignore and no changes will be made to your account
 '''
-    mail.send(msg)
+    mail.send()
 
 #Reset user password - page to enter email to request a password reste
 @app.route("/reset_password", methods = ['GET', 'POST'])
