@@ -6,7 +6,7 @@
         <form method = "POST" action=""> <!--This will post the information back to the same route we are curently on --> 
             {{ form.hidden_tag() }} <!--hidden_tag is a CSRF(Cross Site Fogary Token) --> 
             <fieldset class="form-group">
-                <legend class="border-bottom mb-3">Log In</legend>
+                <legend class="border-bottom mb-3">RESET PASSWORD</legend>
                 <!--field names are specified from the Rgistration Class in forms.py--> 
                 <div class="form-group">
                     {{ form.email.label(class="form-control-label") }} <!--prints out email from email field --> 
@@ -21,36 +21,11 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }} <!--prints out password from password field --> 
-                    {% if form.password.errors%} 
-                    {{ form.password(class="form-control form-control-lg is-invalid") }} <!--for errors in username --> 
-                    <div class = "invalid-feedback">
-                        {% for error in form.password.errors %} 
-                            <span>{{ error }}</span>
-                        {% endfor %}
-                    </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-check">
-                    {{form.remember(class = 'form-check-input')}}
-                    {{form.remember.label(class = 'form-check-label')}}
-                </div>
             </fieldset>
             <!--Submit button using bootstrap--> 
             <div class="form-group">
                 {{ form.submit(class = "btn btn-outline-info")}}
             </div>
-            <small class = "text-muted ml-3">
-                <a href="{{url_for('reset_request')}}">Forgot Password?</a>
-            </small>
         </form>
-    </div>
-    <div class = "border-top pt-3">
-        <small class = "text-muted">
-            Require an Account? <a class="ml-2" href="{{url_for('register')}}">Sign Up Now</a>
-        </small> <!--passing in the login function from forms.py -->
     </div>
 {% endblock content %}
