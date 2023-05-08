@@ -23,6 +23,14 @@
     {% endif %}
 </head>
 <body>
+    <style>
+      body{
+      background-image: url("static/images/Background.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      }
+    </style>
     <!-- Navbar (Navigation Bar at the Top Of the Webpages)-->
     <header class="site-header">
         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
@@ -69,12 +77,23 @@
           <div class="col-md-4">
             <div class="content-section">
               <h3>Our Sidebar</h3>
-              <p class='text-muted'>You can put any information here you'd like.
+              <p class='text-muted'>Quick Links (Can be updated on request - for a price)
                 <ul class="list-group">
-                  <li class="list-group-item list-group-item-light">Latest Posts</li>
-                  <li class="list-group-item list-group-item-light">Announcements</li>
-                  <li class="list-group-item list-group-item-light">Calendars</li>
-                  <li class="list-group-item list-group-item-light">etc</li>
+                  <li class="list-group-item list-group-item-light">
+                    <a href="{{ url_for('home') }}" target="_blank">Latest Posts (Back to Home)</a>
+                  </li>
+                  <li class="list-group-item list-group-item-light">
+                    <a href="https://www.NFL.com" target="_blank">NFL Homepage</a>
+                  </li>
+                  <li class="list-group-item list-group-item-light">
+                    <a href="https://football.fantasysports.yahoo.com/" target="_blank">Yahoo Fantasy Homepage</a>
+                  </li>
+                  <li class="list-group-item list-group-item-light">
+                    <a href="https://www.espn.co.uk/nfl/fixtures/_/week/1/seasontype/2" target="_blank">NFL Schedule</a>
+                  </li>
+                  <li class="list-group-item list-group-item-light">
+                    <a href=https://draftwizard.fantasypros.com/football/mock-draft-simulator/" target="_blank">Mock Draft Simulator</a>
+                  </li>
                 </ul>
               </p>
             </div>
@@ -89,20 +108,24 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    
+  </br>
+  </br>
+    <h3 class="sm-heading">Social Media links for all you addics!!!!!!!!!!</h3> 
+  </body>
 
 <!-- Add font awesome icons -->
 
-# not working yet !!!!!!!!!!<img src="images/football_1.png" alt="football" width= "300" height="145">
 
-<a href="https://www.twitter.com">
-  <i href="https://www.twitter.com" class="fa fa-twitter"></i>
-<a href="https://www.facebook.com">
-  <i href="https://www.facebook.com" class="fa fa-facebook"></i>
-<a href="https://www.youtube.com">
-  <i href="https://www.youtube.com" class="fa fa-youtube"></i>
-<a href="https://www.instagram.com">
-  <i href="https://www.instagram.com" class="fa fa-instagram"></i>
-
+<div>
+  <a href="https://www.twitter.com">
+    <i href="https://www.twitter.com" class="fa fa-twitter"></i>
+  <a href="https://www.facebook.com">
+    <i href="https://www.facebook.com" class="fa fa-facebook"></i>
+  <a href="https://www.youtube.com">
+    <i href="https://www.youtube.com" class="fa fa-youtube"></i>
+  <a href="https://www.instagram.com">
+    <i href="https://www.instagram.com" class="fa fa-instagram"></i>
+</div>
 
 </html>
