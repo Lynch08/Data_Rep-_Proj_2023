@@ -25,11 +25,15 @@ body {
   .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
   }
+
+  .quick-links{
+    color: #010b13;
+  }
   
   .content-section {
-    background: #ffffff;
+    background: #d2d7ddab;
     padding: 10px 20px;
-    border: 1px solid #dddddd;
+    border: 1px solid #581a1a;
     border-radius: 3px;
     margin-bottom: 20px;
   }
@@ -45,6 +49,8 @@ body {
   
   .article-content {
     white-space: pre-line;
+    font-weight: bold;
+    font-size: large;
   }
   
   .article-img {
@@ -96,30 +102,30 @@ body {
 }
 
 .ab-body{
-  color: green;
+  color: rgb(2, 36, 2);
   font-weight: bold;
   
 }
 
 .ab-heading{
   color: rgb(15, 12, 207);
-  background-color:lightgray;
+  background-color:rgba(211, 211, 211, 0.562);
+  text-align: center;
 }
 
 .ab-para{
-  background-color:lightgray
+  background-color:rgba(211, 211, 211, 0.74)
 }
 .sm-heading {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 20em;
-  background: #c2c6ca;
+  background: rgb(241, 6, 6);
   color: rgb(15, 12, 207);
 
 }
-  
-/* Set a specific color for each brand */
+
 
 /* Facebook */
 .fa-facebook {
