@@ -24,12 +24,12 @@ Before getting started, ensure that the following components are installed on yo
 Python (version 3.8 or higher)  
 pip (package installer for Python)  
 Setup and Installation  
-1. Clone the repository  
+1. **Clone the repository**  
 First, clone this repository to an appropriate location on your local machine using the following command:  
 
 git clone https://github.com/Lynch08/Data_Rep-_Proj_2023.git
 
-2. Set up a virtual environment
+2. **Set up a virtual environment**
 A virtual environment is recommended to manage project dependencies. Follow the steps below to set up a virtual environment using venv:
 
 ##### Move into the project directory
@@ -48,11 +48,11 @@ venv\Scripts\activate.bat
 **Enter command:**    
 source venv/bin/activate  
 
-3. Install project dependencies  
+3. **Install project dependencies**  
 To install the required dependencies, use the package manager pip:  
 pip install -r requirements.txt  
 
-4. Run the project  
+4. **Run the project**  
 Once the setup is complete, you can run the project using the following command in the project location:  
 
 python run.py  
@@ -71,15 +71,16 @@ OR
 
 2. I have set up a specific account for you to log in as (Only email and Password required for login): 
 
-Password: Data_Rep_2023  
-Email: Abeatty@demo.ie  
+**Password:** Data_Rep_2023  
+**Email:** Abeatty@demo.ie  
 
-(Not Required for Login - Display Name Only)  
-Username: Abeatty  
+(Not Required for Login - Display Name Only)   
+**Username:** Abeatty  
 
 ### Navigation  after Login
 Once you are logged in you may notice that the headings on the far right of the navigation bar have changed slightly. You can navigate between the "Homepage", "About" page, "New Post" Page, "Account" details page and "Logout" - these buttons are on the heading bar.  
-**Homepage:** Shows most recent posts (you can click on the posts to see them in full and edit/delete the posts that of the user you are logged in as). 
+
+**Homepage:** Shows most recent posts (you can click on the posts to see them in full and edit/delete the posts that of the user you are logged in as).  
 **About Page:** This is an Introdution Page to the team "owners" in the league.
 **New Post Page:** This gives you empty fields to fill in the title and content of your next post.  
 **Account Page:** This returns your account info, allows you to edit your username or email address as required. It also allows you to upload an image as a profile pic.  
