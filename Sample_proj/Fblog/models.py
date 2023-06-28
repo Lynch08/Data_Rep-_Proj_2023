@@ -1,7 +1,7 @@
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from datetime import datetime
 from Fblog import db, login_manager, app
-#fask extension gives class to inherite from that adds these attributes and methods (is authenticated, is active, is annonomous, get_id)
+#flask extension gives class to inherite from that adds these attributes and methods (is authenticated, is active, is annonomous, get_id)
 from flask_login import UserMixin
 
 #decorator
