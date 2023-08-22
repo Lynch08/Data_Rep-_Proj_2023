@@ -27,36 +27,42 @@ Setup and Installation
 1. **Clone the repository**  
 First, clone this repository to an appropriate location on your local machine using the following command:  
 
+```
 git clone https://github.com/Lynch08/Data_Rep-_Proj_2023.git
-
+```
 2. **Set up a virtual environment**
 A virtual environment is recommended to manage project dependencies. Follow the steps below to set up a virtual environment using venv:
 
 ##### Move into the project directory
-cd SAMPLE_PROJ
-
+```
+cd ../Project
+```
 ##### Create a new virtual environment
 **Enter command:**    
+```
 python -m venv venv
-
+```
 #### Activate the virtual environment
 ##### For Windows:
 **Enter command:**  
+```
 venv\Scripts\activate.bat 
-
+```
 ##### For macOS/Linux:
 **Enter command:**    
+```
 source venv/bin/activate  
-
+```
 3. **Install project dependencies**  
 To install the required dependencies, use the package manager pip:  
+```
 pip install -r requirements.txt  
-
+```
 4. **Run the project**  
 Once the setup is complete, you can run the project using the following command in the project location:  
-
+```
 python run.py  
-
+```
 
 ### Register/Login to the Web Interface
 Congratulations! You have successfully set up the project and are ready to use the web interface.  
