@@ -1,4 +1,4 @@
-# Data Representation 2023  
+# Data Representation Project 2023  
 ### Introduction  
 This is the Project for the Data Representation Module. This project involves creating a blog for my fantasy NFL league. The project utilizes Python coding, a Flask server with a REST API, a database table for storing data, a web interface for user interaction, and authentication for secure access.  
 
@@ -101,14 +101,31 @@ Using Flask, a flexible web framework, we were able to create a decent user expe
 Throughout the development process, I faced challenges such as database creation, API and Web page design. However, with planning and problem-solving techniques, I successfully overcame most of these hurdles and delivered a functional and user-friendly web interface. One aspect that I found extremely challanging was the Web Design, I was able to get plenty of resources from websites like W3Schools, however I found that many of my design ideas did not look as good on the webpages as they did in my minds eye.
 
 
-Citeations:
+### Refrences:
+##### Documentation and tutorials
+ - [HTML W3schools](https://www.w3schools.com/html/)  
+ - [Python Tutorials - Flask Form](https://pythonspot.com/flask-web-forms/)
+ - [JavaScript W3schools](https://www.w3schools.com/js/default.asp)  
+ - [HTML/DOM W3schools](https://www.w3schools.com/js/js_htmldom.asp)  
+ - [Classes W3schols](https://www.w3schools.com/python/python_classes.asp)  
+ - [Create and Import modules in Python - Geeks for Geeks](https://www.geeksforgeeks.org/create-and-import-modules-in-python/)  
+ - [How to Create and Import a Custom Module in Python - Stackoverflow](https://stackoverflow.com/questions/37072773/how-to-create-and-import-a-custom-module-in-python)  
+ - [Python Modules and Packages – An Introduction - Real Python](https://realpython.com/python-modules-packages/)
+ - [Python Classes: The Power of Object-Oriented Programming - Real Python](https://realpython.com/python-classes/) 
+ - [Flask Documentation](https://flask.palletsprojects.com/en/2.3.x/)  
+ - [Flask Setup - Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3)  
 
 
-
-
-
-
-
+##### Videos
+- [Importing Your Own Python Modules Properly](https://www.youtube.com/watch?v=GxCXiSkm6no)
+- [Python Flask Tutorial: Full-Featured Web App Parts 1-9](https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=RDQMHJcZNIpAfbc&start_radio=1)
+- [Python Website Full Tutorial - Flask, Authentication, Databases & More](https://www.youtube.com/watch?v=dam0GPOAvVI)
+- [Web Development with Python Tutorial – Flask & Dynamic Database-Driven Web Apps](https://www.youtube.com/watch?v=yBDHkveJUf4)
+- [Python Requests Authentication Examples - Basic Auth, Custom Headers w/ Code](https://www.youtube.com/watch?v=TMxmkHdhfr8)
+- [How to Send Emails with Flask Using Python](https://www.youtube.com/watch?v=L7Cslucyyyo)
+- [Python Website Full Tutorial - Flask, Authentication, Databases & More](https://www.youtube.com/watch?v=dam0GPOAvVI)
+- [How to Validate a Password Using Python (Simple)](https://www.youtube.com/watch?v=EGgjPCrzQkQ)
+- [Python Flask Authentication Tutorial - Learn Flask Login](https://www.youtube.com/watch?v=71EU8gnZqZQ) 
 
 
 

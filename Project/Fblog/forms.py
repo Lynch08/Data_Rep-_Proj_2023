@@ -63,12 +63,13 @@ class UpdateAccountForm(FlaskForm):
                 raise ValidationError('That Email Already Exists - Please Choose again')
 
 
+# Define a form class for creating a new post
 class PostForm(FlaskForm):
     title = StringField('Title', validators =[DataRequired()] )
     content = TextAreaField('Content',  validators =[DataRequired()])
     submit = SubmitField('Post')
 
-
+# Define a form class for requesting a password reset
 class RequestResetForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(),Email()])
     submit = SubmitField('Request Password Reset')
@@ -79,7 +80,7 @@ class RequestResetForm(FlaskForm):
         if user is None:
             raise ValidationError('There is no account using that email - please register')
 
-
+# Define a form class for resetting a password
 class ResetPasswordForm(FlaskForm):
     password = PasswordField("Password", validators=[DataRequired()])
     confirm_password = PasswordField("Confirm Password", validators=[DataRequired(), EqualTo('password')])
